@@ -21,8 +21,8 @@ export default async function Page({ params }:Props){
 			{/* </header> */}
 
 
-			<div className="mt-5 text-lg text-gray-700">
-				<PortableText value={page.content} />
+			<div className="mt-5 prose prose-slate lg:prose-xl prose-a:text-green-600">
+				<PortableText value={page.content}/>
 			</div>
 
 

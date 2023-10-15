@@ -18,7 +18,7 @@ export default async function Project({ params }:Props){
 			</header>
 
 
-			<div className="mt-5 text-lg text-gray-700">
+			<div className="mt-5 prose prose-slate lg:prose-lg">
 				<PortableText value={project.content} />
 			</div>
 

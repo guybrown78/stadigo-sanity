@@ -11,8 +11,9 @@ const config = defineConfig({
 
 	title: "Stadium Website",
 
-	useCdn: true,
-	apiVersion: "2023-04-04",
+	// useCdn: true,
+
+	// apiVersion: "2023-04-04",
 
 	basePath: "/admin",
 
