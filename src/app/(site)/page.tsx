@@ -1,3 +1,4 @@
+import StadiumCard from "@/components/StadiumCard"
 import { getProjects } from "@/sanity/sanity-utils"
 import Image from "next/image"
 import Link from "next/link"
@@ -19,16 +20,7 @@ export default async function Home() {
 				<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 					{projects.map((project) => (
-						<Link 
-							href={`projects/${project.slug}`}
-							key={project._id}
-							className="border border-gray-500 rounded-lg p-2 hover:scale-105 hover:border-green-500 cursor-pointer transition"
-						>
-							{ project.image && (
-								<Image src={project.image} alt={project.name} width={300} height={150} className="object-cover rounded-lg border border-gray-500" />
-							)}
-							<div className="mt-2 font-extrabold bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent">{project.name}</div>
-						</Link>
+						<StadiumCard key={project._id} project={project} />
 					))}
 
 				</div>
