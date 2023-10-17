@@ -1,6 +1,6 @@
-"use client"
+// "use client"
 
-import useAnimatedRouter from "@/hooks/useAnimatedRouter";
+// import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 
 import Link from "next/link";
 
@@ -12,15 +12,15 @@ type Props = {
 
 export default function NavLink({ slug, children }:Props) {
 
-	const { animatedRoute } = useAnimatedRouter();
+	// const { animatedRoute } = useAnimatedRouter();
 
 	return (
 		<Link 
 			href={`/${slug}`}
-			onClick={() => {        
-        animatedRoute(`/${slug}`);
-      }}
-      passHref  
+			// onClick={() => {        
+      //   animatedRoute(`/${slug}`);
+      // }}
+      // passHref  
 			className="hover:underline"
 		>
 			{ children }

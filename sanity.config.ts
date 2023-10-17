@@ -5,15 +5,15 @@ import schemas from './src/sanity/schemas';
 
 const config = defineConfig({
 
-	projectId: "iiusl7yw",
+	projectId: String(process.env.SANITY_PROJECT_ID),
 
-	dataset: "production",
+	dataset:  String(process.env.SANITY_DATASET),
 
 	title: "Stadium Website",
 
-	// useCdn: true,
+	useCdn: true,
 
-	// apiVersion: "2023-04-04",
+	apiVersion: String(process.env.SANITY_API_VERSION),
 
 	basePath: "/admin",
 
@@ -22,4 +22,4 @@ const config = defineConfig({
 	schema: { types: schemas }
 })
 
-export default config;
+export default config;	

@@ -1,9 +1,12 @@
 
 const config = {
-	projectId: "iiusl7yw",
-	dataset: "production",
-	// useCdn: true,
-	// apiVersion: "2023-04-04",
+	projectId: String(process.env.SANITY_PROJECT_ID),
+
+	dataset:  String(process.env.SANITY_DATASET),
+	
+	useCdn: true,
+
+	apiVersion: String(process.env.SANITY_API_VERSION),
 };
 
 export default config

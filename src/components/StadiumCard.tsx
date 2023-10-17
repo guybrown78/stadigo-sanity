@@ -1,6 +1,6 @@
-"use client"
+// "use client"
 
-import useAnimatedRouter from "@/hooks/useAnimatedRouter";
+// import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 
 import Image from "next/image"
 import Link from "next/link";
@@ -13,16 +13,16 @@ type Props = {
 
 export default function StadiumCard({ project }:Props) {
 
-	const { animatedRoute } = useAnimatedRouter();
+	// const { animatedRoute } = useAnimatedRouter();
 
 	return (
 		<Link 
 			href={`projects/${project.slug}`}
-			onClick={(e) => {      
-				e.preventDefault();  
-        animatedRoute(`projects/${project.slug}`);
-      }}
-      passHref  
+			// onClick={(e) => {      
+			// 	e.preventDefault();  
+      //   animatedRoute(`projects/${project.slug}`);
+      // }}
+      // passHref  
 			className="border border-gray-500 rounded-lg p-2 hover:scale-105 hover:border-green-500 cursor-pointer transition"
 		>
 			{ project.image && (

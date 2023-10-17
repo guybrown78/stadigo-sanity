@@ -1,3 +1,4 @@
+import LatestInsights from "@/components/LatestInsights"
 import StadiumCard from "@/components/StadiumCard"
 import { getProjects } from "@/sanity/sanity-utils"
 import Image from "next/image"
@@ -23,6 +24,10 @@ export default async function Home() {
 						<StadiumCard key={project._id} project={project} />
 					))}
 
+				</div>
+						
+				<div className="mt-5">
+					<LatestInsights />
 				</div>
 				
 			</div>
