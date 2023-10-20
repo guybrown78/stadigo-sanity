@@ -1,5 +1,6 @@
 
 import { PortableTextBlock } from "sanity";
+import { Insight } from "./Insight";
 
 export type Category = {
 	_id: string;
@@ -9,4 +10,5 @@ export type Category = {
 	description: PortableTextBlock[];
 	metaDescription:string,
 	keywords:string,
+	insights?:Insight[]
 }

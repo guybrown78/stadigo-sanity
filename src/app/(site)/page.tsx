@@ -1,4 +1,4 @@
-import LatestInsights from "@/components/LatestInsights"
+import LatestInsights from "@/components/insights/LatestInsights"
 import StadiumCard from "@/components/StadiumCard"
 import { getProjects } from "@/sanity/sanity-utils"
 import Image from "next/image"

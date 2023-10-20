@@ -7,6 +7,7 @@ export type Insight = {
 	_id: string;
 	_createdAt: Date;
 	title: string;
+	subTitle?: string;
 	slug: string;
 	overview:string,
 	metaDescription:string,
@@ -15,6 +16,7 @@ export type Insight = {
 	coverImage: string;
 	tags:Tag[];
 	categories:Category[]
-	publisheddAt: Date;
+	publishedAt: Date;
+	estimatedReadingTime:Number;
 	body: PortableTextBlock[];
 }

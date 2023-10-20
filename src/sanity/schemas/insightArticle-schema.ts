@@ -11,6 +11,11 @@ const insightArticle = {
       type: 'string',
     },
 		{
+      name: 'subTitle',
+      title: 'Sub Title',
+      type: 'string',
+    },
+		{
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -50,6 +55,11 @@ const insightArticle = {
       options: {
         hotspot: true,
       },
+			fields: [{
+				name: 'alt',
+				title: 'Alt',
+				type: 'string'
+			}]
     },
 		{
       name: 'categories',
@@ -58,7 +68,7 @@ const insightArticle = {
       of: [{type: 'reference', to: {type: 'category'}}],
     },
 		{
-      name: 'tags',	
+      name: 'tags',
       title: 'Tag',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],

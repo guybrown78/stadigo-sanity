@@ -1,12 +1,13 @@
 
-const config = {
-	projectId: String(process.env.SANITY_PROJECT_ID),
 
-	dataset:  String(process.env.SANITY_DATASET),
+const config = {
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+
+	dataset:  process.env.NEXT_PUBLIC_SANITY_DATASET as string,
 	
 	useCdn: true,
 
-	apiVersion: String(process.env.SANITY_API_VERSION),
+	apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION as string,
 };
 
 export default config

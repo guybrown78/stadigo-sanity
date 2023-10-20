@@ -1,7 +1,7 @@
 import { getPages } from "@/sanity/sanity-utils";
 import Link from "next/link";
-import Logo from "./Logo";
-import NavLink from "./NavLink";
+import Logo from "../Logo";
+import NavLink from "../NavLink";
 
 export default async function Header() {
 	// get all pages

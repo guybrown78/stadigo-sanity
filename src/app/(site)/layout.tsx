@@ -1,9 +1,17 @@
-import Header from '@/components/Header'
+
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import clsx from 'clsx'
 
-const inter = Inter({ subsets: ['latin'] })
+import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,12 +24,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='h-full scroll-smooth bg-white antialiased'>
+    <html 
+			lang="en" 
+			className={clsx(
+        'h-full scroll-smooth bg-white antialiased',
+        inter.variable,
+      )}
+		>
       <body className="flex h-full flex-col">
 				<Header />
 				<main>
 					{children}
 				</main>
+				<Footer />
 			</body>
     </html>
   )

@@ -3,17 +3,19 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from './src/sanity/schemas';
 
+
 const config = defineConfig({
 
-	projectId: String(process.env.SANITY_PROJECT_ID),
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
 
-	dataset:  String(process.env.SANITY_DATASET),
+	dataset:  process.env.NEXT_PUBLIC_SANITY_DATASET as string,
+
 
 	title: "Stadium Website",
 
 	useCdn: true,
 
-	apiVersion: String(process.env.SANITY_API_VERSION),
+	apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION as string,
 
 	basePath: "/admin",
 

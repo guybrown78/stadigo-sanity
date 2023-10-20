@@ -3,6 +3,8 @@ import { Page } from "@/types/Page";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Insight } from "@/types/Insight";
+import { PolicyPage } from "@/types/PolicyPage";
+import { Category } from "@/types/Category";
 
 export async function getProjects():Promise<Project[]> {
 	return createClient(clientConfig).fetch(
@@ -55,6 +57,29 @@ export async function getPage(slug:string):Promise<Page> {
 		{ slug }
 	)
 }
+export async function getPolicyPages():Promise<PolicyPage[]> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "policyPage"]{
+      _id,
+      _createdAt,
+      title,
+			order,
+      "slug": slug.current,
+    }`
+	)
+}
+export async function getPolicyPage(slug:string):Promise<PolicyPage> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "policyPage" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+			content
+    }`, 
+		{ slug }
+	)
+}
 export async function getInsights():Promise<Insight[]> {
 	return createClient(clientConfig).fetch(
 		groq`*[_type == "insightArticle"]{
@@ -64,7 +89,7 @@ export async function getInsights():Promise<Insight[]> {
       "slug": slug.current,
 			overview,
 			publishedAt,
-			"coverImage": image.asset->url,
+			"coverImage": coverImage.asset->url,
 			author-> {
 				name, 
 				"image": image.asset->url
@@ -83,19 +108,57 @@ export async function getInsights():Promise<Insight[]> {
     }`
 	)
 }
-
-export async function getInsight(slug:string):Promise<Insight> {
+export async function getLatestInsights():Promise<Insight[]> {
 	return createClient(clientConfig).fetch(
-		groq`*[_type == "insightArticle" && slug.current == $slug][0]{
+		groq`*[_type == "insightArticle"][0..2]
+		| order(publishedAt desc)
+		{
       _id,
       _createdAt,
       title,
       "slug": slug.current,
 			overview,
 			publishedAt,
-			"coverImage": image.asset->url,
+			"coverImage": coverImage.asset->url,
+    }`
+	)
+}
+export async function getMoreInsights(insight:Insight):Promise<Insight[]> {
+	return createClient(clientConfig).fetch(
+		// | slice(0, 3)
+		// && count(categories[]._ref in $insightCategories) > 0
+		groq`
+			*[_type == 'insightArticle'  && _id != $insightID][0..2]
+			| order(publishedAt desc)
+			{
+				_id,
+				_createdAt,
+				title,
+				"slug": slug.current,
+				overview,
+				publishedAt,
+			}
+		`, { 
+			insightID: insight._id, 
+			insightCategories: insight.categories 
+		}
+	)
+}
+export async function getInsight(slug:string):Promise<Insight> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "insightArticle" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+			subTitle,
+      "slug": slug.current,
+			overview,
+			publishedAt,
+			"coverImage": coverImage.asset->url,
 			author-> {
 				name, 
+				role,
+				linkedin,
 				"image": image.asset->url
 			},
 			categories[]->{
@@ -108,8 +171,33 @@ export async function getInsight(slug:string):Promise<Insight> {
 				title,
 				description
 			},
+			"estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
 			body
     }`, 
+		{ slug }
+	)
+}
+
+
+export async function getCategory(slug:string):Promise<Category> {
+	return createClient(clientConfig).fetch(
+		groq`
+		*[_type == 'category' && slug.current == $slug][0] {
+			_id,
+			_createdAt,
+			title,
+			description,
+			metaDescription,
+			keywords,
+			"insights": *[_type == 'insightArticle' && references(^._id)] {
+				_id,
+				title,
+				"slug": slug.current,
+				overview,
+				publishedAt,
+				"coverImage": coverImage.asset->url,
+			}
+		}`, 
 		{ slug }
 	)
 }
