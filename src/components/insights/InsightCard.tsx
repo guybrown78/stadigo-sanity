@@ -22,7 +22,7 @@ export default function InsightCard({ insight }:Props){
 							className="aspect-[16/9] w-full rounded-2xl bg-slate-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
 						/>
 					}
-					<div className="max-w-xl">
+					<div className="">
 						<div className="mt-8 flex items-center gap-x-4 text-xs">
 							<time dateTime={moment(insight.publishedAt).format('MMMM Do YYYY, h:mm:ss a')} className="text-slate-500">
 								{moment(insight.publishedAt).format('MMMM Do YYYY') }

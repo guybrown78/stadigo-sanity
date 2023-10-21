@@ -14,19 +14,19 @@ export default function FooterNav() {
 						<li>
 							<FooterNavLink 
 								title="Performance Validation" 
-								anchor="../#performance-validation" 
+								anchor="/#performance-validation" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Skill Enhancement" 
-								anchor="../#skill-enhancement" 
+								anchor="/#skill-enhancement" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Stadium Digital Integration" 
-								anchor="../#digital-integration" 
+								anchor="/#digital-integration" 
 							/>
 						</li>
 					</ul>
@@ -40,25 +40,25 @@ export default function FooterNav() {
 						<li>
 							<FooterNavLink 
 								title="Competency Assurance" 
-								anchor="../#competency-assurance" 
+								anchor="/#competency-assurance" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Digital Transformation" 
-								anchor="../#digital-transformation" 
+								anchor="/#digital-transformation" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Fan Experience Enhancement" 
-								anchor="../#fan-experience-enhancement" 
+								anchor="/#fan-experience-enhancement" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Safety and Efficieny" 
-								anchor="../#safetyand-efficieny" 
+								anchor="/#safetyand-efficieny" 
 							/>
 						</li>
 					</ul>
@@ -73,20 +73,20 @@ export default function FooterNav() {
 							<li>
 								<FooterNavLink 
 									title="Company Details" 
-									anchor="../#company-details" 
+									anchor="/#company-details" 
 								/>
 							</li>
 							<li>
 								<FooterNavLink 
 									title="Vision Statement" 
-									anchor="../#vision-statement" 
+									anchor="/#vision-statement" 
 								/>
 							</li>
 
 							<li>
 								<FooterNavLink 
 									title="Benefits" 
-									anchor="../#benefits" 
+									anchor="/#benefits" 
 								/>
 							</li>
 
@@ -109,19 +109,19 @@ export default function FooterNav() {
 						<li>
 							<FooterNavLink 
 								title="Frequently Asked Questions" 
-								anchor="../#faqs" 
+								anchor="/#faqs" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Newsletter Subscription" 
-								anchor="../#newsletter-subscription" 
+								anchor="/#newsletter-subscription" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Pioneer Program" 
-								anchor="../#pioneer-program" 
+								anchor="/#pioneer-program" 
 							/>
 						</li>
 						<li>

@@ -15,18 +15,12 @@ export default function FooterNavLink({ title, anchor }:Props) {
 	const pathname = usePathname();
 
 	const handleAnchor = (event:any, href:string) => {
-		// console.log(href)
-		// console.log(pathname)
 		event.preventDefault();
-		if(pathname === "/"){
-			if (href.includes("#")) {
-				window.location.hash = ''
-				window.location.hash = href
-			}else{
-				router.push(`../${href}`)
-			}
+		if (pathname === "/" && href.includes("#")) {
+			window.location.hash = ''
+			window.location.hash = href.replace("/", "")
 		}else{
-			router.push(`../${href}`)
+			router.push(`${href}`)
 		}
 	}
 
