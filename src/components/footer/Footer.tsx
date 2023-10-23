@@ -4,7 +4,8 @@ import { Container } from "@/components/Container";
 import FooterNav from "@/components/footer/FooterNav";
 import FooterBasement from "@/components/footer/FooterBasement";
 import FooterLegalLinks from "@/components/footer/FooterLegalLinks";
-
+import { Subscribe } from "@/components/subscribe/Subscribe";
+import Logo from "@/components/Logo"
 
 
 export default function Footer() {
@@ -18,13 +19,15 @@ export default function Footer() {
 
 						{/* Company Info */}
 						<div className="space-y-8">
-							{/* Logo */}
+							<div className="w-32">
+								<Logo/>
+							</div>
+							
             	<p className="text-sm leading-6 text-slate-600">
-								Stadigo seo info
+								Empowering excellence in stadium performance and&nbsp;fan&nbsp;experience
 							</p>
 							<div className="flex space-x-6">
-								<Link href="/">LinkedIn</Link>
-								<Link href="/">X</Link>
+								<Subscribe />
 							</div>
 						</div>
 
