@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import FooterNav from "@/components/footer/FooterNav";
 import FooterBasement from "@/components/footer/FooterBasement";
 import FooterLegalLinks from "@/components/footer/FooterLegalLinks";
-import { Subscribe } from "@/components/subscribe/Subscribe";
+import { Subscribe } from "@/components/modals/Subscribe";
 import Logo from "@/components/Logo"
 
 
@@ -12,7 +12,7 @@ export default function Footer() {
 	// get all pages
 	// const pages = await getPages();
 	return (
-		<footer className="mt-5 border-t border-slate-200/50 bg-slate-100">
+		<footer className="mt-5 border-t border-emerald-200/50 bg-emerald-50">
 			<Container>
 				<div className="pb-8 pt-24 lg:pt-32">
 					<div className="xl:grid xl:grid-cols-3 xl:gap-8">

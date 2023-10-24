@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/Button'
-import { SubscribeModal } from '@/components/subscribe/SubscribeModal'
+import { SubscribeModal } from '@/components/modals/SubscribeModal'
 
 
 

@@ -15,9 +15,9 @@ import { ReactNode, MouseEventHandler } from 'react'
 // }
 const baseStyles:any = {
   solid:
-    'group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 transition',
+    'group inline-flex items-center justify-center py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 transition',
   outline:
-    'group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none',
+    'group inline-flex ring-1 ring-inset items-center justify-center py-2 px-4 text-sm focus:outline-none transition',
 }
 const widthStyles:any = {
   normal:
@@ -44,9 +44,9 @@ const variantStyles:any = {
   },
   outline: {
     slate:
-      'ring-slate-400 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300',
+      'ring-slate-700 text-slate-900 hover:bg-slate-100 hover:ring-slate-400  hover:text-slate-700 active:ring-slate-400 active:text-slate-400  focus-visible:outline-blue-600 focus-visible:ring-slate-300',
     white:
-      'ring-slate-700 text-white hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white',
+      'ring-slate-700 text-slate-900 hover:bg-slate-100 hover:ring-slate-400  hover:text-slate-700 active:ring-slate-400 active:text-slate-400 focus-visible:outline-white',
 		green:
       'ring-green-600 text-green-600 hover:ring-green-400 active:ring-green-400 active:text-green-400 focus-visible:outline-white hover:bg-green-50/50',
   },

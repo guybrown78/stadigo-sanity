@@ -1,27 +1,39 @@
-// "use client"
-
+"use client"
+import { usePathname, useRouter } from 'next/navigation'
 // import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 
 import Link from "next/link";
+import { MouseEventHandler } from 'react';
 
 type Props = {
-	slug:string,
+	href:string,
 	children:React.ReactNode
 }
 
 
-export default function NavLink({ slug, children }:Props) {
+export default function NavLink({ href, children }:Props) {
 
 	// const { animatedRoute } = useAnimatedRouter();
+	const router = useRouter();
+	const pathname = usePathname();
+
+	const handleAnchor = (event:any) => {
+		event.preventDefault();
+		console.log(pathname)
+		if (pathname === "/" && href.includes("#")) {
+			window.location.hash = ''
+			window.location.hash = href.replace("/", "")
+		}else{
+			console.log("boom")
+			router.push(`${href}`)
+		}
+	}
 
 	return (
 		<Link 
-			href={`/${slug}`}
-			// onClick={() => {        
-      //   animatedRoute(`/${slug}`);
-      // }}
-      // passHref  
-			className="hover:underline"
+			href={href}
+			onClick={(e:any) => handleAnchor(e)}
+			className="inline-block rounded-lg px-1 lg:px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
 		>
 			{ children }
 		</Link>
