@@ -19,12 +19,10 @@ export default function NavLink({ href, children }:Props) {
 
 	const handleAnchor = (event:any) => {
 		event.preventDefault();
-		console.log(pathname)
 		if (pathname === "/" && href.includes("#")) {
 			window.location.hash = ''
 			window.location.hash = href.replace("/", "")
 		}else{
-			console.log("boom")
 			router.push(`${href}`)
 		}
 	}

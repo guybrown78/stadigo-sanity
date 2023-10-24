@@ -1,14 +1,18 @@
-import { getPages } from "@/sanity/sanity-utils";
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import NavLink from "@/components/NavLink";
+import NavLink from "@/components/header/NavLink";
 import { Subscribe } from "@/components/modals/Subscribe";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
+import MobileNavigation from "@/components/header/MobileNavigation";
+
+
+
+
+
 
 export default async function Header() {
-	// get all pages
-	const pages = await getPages();
+
 	return (
 		<header className="py-10">
 			<Container>
@@ -27,14 +31,14 @@ export default async function Header() {
 					<div className="flex items-center gap-x-3 lg:gap-x-8">
             <div className="hidden md:block">
 							<Button 
-								href="/stadigo-pioneer-programe" 
+								href="/stadigo-pioneer-program" 
 								variant="outline" 
 								color="slate"
-							><span className="hidden lg:inline">Join our&nbsp;</span>Pioneer Programe</Button>
+							><span className="hidden lg:inline">Join our&nbsp;</span>Pioneer Program</Button>
             </div>
 						<Subscribe />
             <div className="-mr-1 md:hidden">
-              {/* <MobileNavigation /> */}
+							<MobileNavigation />
             </div>
           </div>
 				</nav>

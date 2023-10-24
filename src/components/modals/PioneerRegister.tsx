@@ -14,7 +14,7 @@ export function PioneerRegister() {
 
   return (
     <div>
-			<Button onClick={() => setOpenModal(!openModal)} variant='solid' color="green" width="full">Pioneer Progrem: Registration Now</Button>
+			<Button onClick={() => setOpenModal(!openModal)} variant='solid' color="green" width="full">Pioneer Program: Registration Now</Button>
 
 			<PioneerModal openModal={openModal} onCloseModal={() => {onCloseModal()}} />
 

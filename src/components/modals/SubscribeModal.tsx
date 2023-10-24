@@ -38,7 +38,7 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 						</Dialog.Title>
 						<div className="mt-2">
 							<p className="text-sm text-slate-500">
-							Join the Stadigo Newsletter and gain an edge in stadium excellence. Get <span className='font-semibold'>exclusive insights</span>, <span className='font-semibold'>expert tips</span>, <span className='font-semibold'>early access</span> to updates, and <span className='font-semibold'>connect</span> with a community of stadium professionals. Elevate your Stadium&apos;s performance today – <span className='font-semibold'>subscribe now</span>.
+							Join the Stadigo Newsletter and gain the edge in stadium excellence. Get <span className='font-semibold'>exclusive insights</span>, <span className='font-semibold'>expert tips</span>, <span className='font-semibold'>early access</span> to updates, and <span className='font-semibold'>connect</span> with a community of stadium professionals. Elevate your Stadium&apos;s performance today – <span className='font-semibold'>subscribe now</span>.
 							</p>
 						</div>
 

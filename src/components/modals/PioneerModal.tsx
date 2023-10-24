@@ -93,7 +93,7 @@ export function PioneerModal({ openModal = false, onCloseModal}:Props){
 		
 						<div className="mt-4">
 							<p className="text-xs text-slate-500">
-							Don&apos;t worry, we will never share your details with anyone else. You can read our <Link href="/policies/privacy-policy" onClick={onCloseModal} className='text-green-600'>Privacy Policy</Link> for all the details. You can leave the pioneer programe anytime, click <span className="italic font-semibold">&quot;Unscubscribe&quot;</span> in any our pioneering program comunications
+							Don&apos;t worry, we will never share your details with anyone else. You can read our <Link href="/policies/privacy-policy" onClick={onCloseModal} className='text-green-600'>Privacy Policy</Link> for all the details. You can leave the pioneer program anytime, click <span className="italic font-semibold">&quot;Unscubscribe&quot;</span> in any our pioneering program comunications
 							</p>
 						</div>
 

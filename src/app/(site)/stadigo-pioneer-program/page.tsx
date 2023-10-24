@@ -2,6 +2,7 @@
 import {
 	FaSitemap,
 	FaHandHoldingMedical,
+	FaHandsHoldingCircle,
 	FaUserLock,
 	FaUsersLine,
 	FaRegThumbsUp,
@@ -74,7 +75,7 @@ export default function StadogpPioneerProgram(){
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <FaHandHoldingMedical className="mt-1 h-5 w-5 flex-none text-green-600" aria-hidden="true" />
+                  <FaHandsHoldingCircle className="mt-1 h-5 w-5 flex-none text-green-600" aria-hidden="true" />
                   <span>
                     <strong className="font-semibold text-slate-900">Be the Change:</strong> Your experience is invaluable. By sharing your knowledge, you contribute to creating solutions for the challenges you&apos;ve faced throughout your career. Be a part of the transformation and watch your industry evolve.
                   </span>
