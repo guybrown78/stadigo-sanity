@@ -103,7 +103,7 @@ export default function FooterNav() {
 				{/* Contact */}
 				{/* className="col-span-2 md:col-span-1" */}
 				<div>
-					<h3 className="text-sm font-semibold leading-6 text-gray-900">Contact</h3>
+					<h3 className="text-sm font-semibold leading-6 text-gray-900">Contact &amp; Information</h3>
 					<ul role="list" className="mt-6 space-y-4">
 						
 						<li>
@@ -114,14 +114,14 @@ export default function FooterNav() {
 						</li>
 						<li>
 							<FooterNavLink 
-								title="Newsletter Subscription" 
-								anchor="/#newsletter-subscription" 
+								title="Contact Stadigo" 
+								anchor="/#contact" 
 							/>
 						</li>
 						<li>
 							<FooterNavLink 
 								title="Pioneer Program" 
-								anchor="/#pioneer-program" 
+								anchor="/stadigo-pioneer-program" 
 							/>
 						</li>
 						<li>

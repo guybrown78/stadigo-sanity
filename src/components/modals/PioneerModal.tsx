@@ -49,7 +49,7 @@ export function PioneerModal({ openModal = false, onCloseModal}:Props){
 							/>	
 							<TextField
 								type="text"
-								label="Family name"
+								label="Last name"
 								name="lastName"
 								id="lastName"
 								autoComplete="family-name"

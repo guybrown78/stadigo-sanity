@@ -4,9 +4,13 @@ import { Button } from './Button'
 import { TextAreaField, TextField } from './Fields'
 
 
-export function Contact() {
+export default function Contact() {
   return (
-		<div className='relative isolate bg-emerald-950'>
+		<section
+			id="contact"
+      aria-label="Get in Touch with Stadigo"
+			className="relative isolate bg-emerald-950"
+    >
 			
 				<div className="grid grid-cols-1 lg:grid-cols-2">
 					<div className="relative pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
@@ -135,7 +139,7 @@ export function Contact() {
 					{/* </Container> */}
 				</div>
 			{/* </Container> */}
-		</div>
+			</section>
   
   )
 }
