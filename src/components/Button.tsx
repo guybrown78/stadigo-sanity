@@ -46,7 +46,7 @@ const variantStyles:any = {
     slate:
       'ring-slate-700 text-slate-900 hover:bg-slate-100 hover:ring-slate-400  hover:text-slate-700 active:ring-slate-400 active:text-slate-400  focus-visible:outline-blue-600 focus-visible:ring-slate-300',
     white:
-      'ring-slate-700 text-slate-900 hover:bg-slate-100 hover:ring-slate-400  hover:text-slate-700 active:ring-slate-400 active:text-slate-400 focus-visible:outline-white',
+      'ring-slate-300 text-slate-300 hover:bg-slate-500/50 hover:ring-slate-100  hover:text-slate-100 active:ring-slate-400 active:text-slate-400 focus-visible:outline-white',
 		green:
       'ring-green-600 text-green-600 hover:ring-green-400 active:ring-green-400 active:text-green-400 focus-visible:outline-white hover:bg-green-50/50',
   },
