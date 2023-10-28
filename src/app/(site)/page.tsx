@@ -3,7 +3,7 @@ import Hero from "@/components/Hero"
 import Solutions from "@/components/Solutions"
 import Services from "@/components/Services"
 import LatestInsights from "@/components/insights/LatestInsights"
-import About from "@/components/About"
+import About from "@/components/about/About"
 import Benefits from "@/components/Benefits"
 import CallToAction from "@/components/CTA"
 

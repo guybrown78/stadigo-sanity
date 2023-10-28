@@ -11,6 +11,16 @@ export default function CallToAction(){
 			className="elative overflow-hidden bg-emerald-950 py-32"
     >
 			{/* Set a background image */}
+			{/* 
+			 <Image
+        className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
+        src={backgroundImage}
+        alt=""
+        width={2347}
+        height={1244}
+        unoptimized
+      />
+			*/}
 			<Container>
 				<div className="mx-auto max-w-lg text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
@@ -29,9 +39,6 @@ export default function CallToAction(){
 						</Button>
 						<Subscribe />
 					</div>
-          {/* <Button href="/#book-demo" onClick={(e) => handleAnchor(e, '#book-demo')} color="white" className="mt-10">
-            Book a demo
-          </Button> */}
         </div>
 			</Container>
 		</section>
