@@ -109,7 +109,7 @@ export default function FooterNav() {
 						<li>
 							<FooterNavLink 
 								title="Frequently Asked Questions" 
-								anchor="/#faqs" 
+								anchor="/faqs" 
 							/>
 						</li>
 						<li>

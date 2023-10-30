@@ -32,7 +32,7 @@ export default function About(){
 								<h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
 									Champions of Stadium Excellence.
 								</h1>
-								<p className="relative mt-6 text-lg leading-8 text-slate-600 sm:max-w-md lg:max-w-none">
+								<p className="relative mt-6 text-base leading-8 text-slate-600 sm:max-w-md lg:max-w-none">
 									At Stadigo, we&apos;re the driving force behind stadium excellence. Our journey is defined by innovation and a commitment to setting new standards in stadium operations. Explore how we&apos;re reshaping the stadium experience.
 								</p>
 							</div>

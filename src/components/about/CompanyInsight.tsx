@@ -10,7 +10,7 @@ export default function CompanyInsight(){
 				<div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-slate-600 lg:max-w-none lg:grid-cols-2">
 					<div>
 						<p>
-							At Stadigo, our mission is simple yet profound – <span className='font-semibold'>to redefine how sports stadiums and arenas operate.</span> We&apos;re driven by an unwavering passion for stadium excellence and the ultimate fan experience.
+							Stadigo&apos;s mission is simple yet profound – <span className='font-semibold'>to redefine how sports stadiums and arenas operate.</span> We&apos;re driven by an unwavering passion for stadium excellence and the ultimate fan experience.
 						
 						</p>
 						<p className="mt-8">

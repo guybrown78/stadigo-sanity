@@ -7,6 +7,7 @@ import blockContent from "./blockContent-schema";
 import category from "./category-schema";
 import tag from "./tag-schema";
 import insightArticle from "./insightArticle-schema";
+import faq from "./faq-schema";
 
 const schemas = [
 	project,
@@ -16,7 +17,8 @@ const schemas = [
 	blockContent,
 	category,
 	tag,
-	insightArticle
+	insightArticle,
+	faq
 ]
 
 export default schemas;

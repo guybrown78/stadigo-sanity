@@ -5,6 +5,7 @@ import clientConfig from "./config/client-config";
 import { Insight } from "@/types/Insight";
 import { PolicyPage } from "@/types/PolicyPage";
 import { Category } from "@/types/Category";
+import { Faq } from "@/types/Faq";
 
 export async function getProjects():Promise<Project[]> {
 	return createClient(clientConfig).fetch(
@@ -199,5 +200,16 @@ export async function getCategory(slug:string):Promise<Category> {
 			}
 		}`, 
 		{ slug }
+	)
+}
+
+export async function getFaqs():Promise<Faq[]> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "faq"]{
+      _id,
+      _createdAt,
+      question,
+			answer
+    }`
 	)
 }
