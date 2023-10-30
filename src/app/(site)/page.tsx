@@ -1,5 +1,5 @@
 import Contact from "@/components/Contact"
-import Hero from "@/components/Hero"
+import Hero from "@/components/hero/Hero"
 import Solutions from "@/components/Solutions"
 import Services from "@/components/services/Services"
 import LatestInsights from "@/components/insights/LatestInsights"
