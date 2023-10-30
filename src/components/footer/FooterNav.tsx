@@ -58,7 +58,7 @@ export default function FooterNav() {
 						<li>
 							<FooterNavLink 
 								title="Safety and Efficieny" 
-								anchor="/#safetyand-efficieny" 
+								anchor="/#safety-and-efficieny" 
 							/>
 						</li>
 					</ul>

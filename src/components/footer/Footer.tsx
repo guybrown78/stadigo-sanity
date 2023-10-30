@@ -12,7 +12,7 @@ export default function Footer() {
 	// get all pages
 	// const pages = await getPages();
 	return (
-		<footer className="mt-5 border-t border-emerald-200/50 bg-emerald-50">
+		<footer className="mt-5 border-t border-slate-200/50 bg-slate-50">
 			<Container>
 				<div className="pb-8 pt-24 lg:pt-32">
 					<div className="xl:grid xl:grid-cols-3 xl:gap-8">
