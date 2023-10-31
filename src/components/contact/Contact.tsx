@@ -1,8 +1,6 @@
 
 import { FaLocationArrow, FaEnvelope } from 'react-icons/fa6'
-import { Button } from './Button'
-import { TextAreaField, TextField } from './Fields'
-
+import ContactForm from './ContactForm'
 
 export default function Contact() {
   return (
@@ -65,77 +63,7 @@ export default function Contact() {
 						</div>
 					</div>
 					{/* <Container> */}
-					<form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
-						<div className="mx-auto max-w-xl lg:max-w-lg lg:ml-0">
-							<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-								<div>
-
-										<TextField 
-											type="text"
-											label="First name"
-											name="first-name"
-											id="first-name"
-											autoComplete="given-name"
-											theme="dark"
-										/>
-
-								</div>
-								<div>
-									<TextField 
-										type="text"
-										label="Last name"
-										name="last-name"
-										id="last-name"
-										autoComplete="family-name"
-										theme="dark"
-									/>
-
-								</div>
-								<div className="sm:col-span-2">
-									<TextField 
-										type="email"
-										label="Email"
-										name="email"
-										id="email"
-										autoComplete="email"
-										theme="dark"
-									/>
-
-								</div>
-								<div className="sm:col-span-2">
-									<TextField 
-										type="tel"
-										label="Phone number"
-										name="phone-number"
-										id="phone-number"
-										autoComplete="tel"
-										theme="dark"
-									/>
-
-								</div>
-								<div className="sm:col-span-2">
-									<TextAreaField 
-										name="message"
-										label="Message"
-										id="message"
-										rows={4}
-										theme="dark"
-									/>
-
-								</div>
-							</div>
-							<div className="mt-8 flex justify-end">
-								<Button
-									type="submit"
-									color="green"
-									rounded="normal"
-								>
-									Send message
-								</Button>
-
-							</div>
-						</div>
-					</form>
+					<ContactForm />
 					{/* </Container> */}
 				</div>
 			{/* </Container> */}

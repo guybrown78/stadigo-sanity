@@ -1,4 +1,4 @@
-import Contact from "@/components/Contact"
+import Contact from "@/components/contact/Contact"
 import Hero from "@/components/hero/Hero"
 import Solutions from "@/components/Solutions"
 import Services from "@/components/services/Services"
