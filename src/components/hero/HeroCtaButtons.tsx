@@ -15,7 +15,7 @@ export default function HeroCtaButtons(){
 		<div className="mt-10 flex items-center justify-center gap-x-6">
 			<Subscribe />
 			<Link href="/#solutions" onClick={(e) => handleAnchor(e, "#solutions")} className="text-sm font-semibold leading-6 text-slate-900">
-				Discover our solutions <span aria-hidden="true">→</span>
+				Discover our solutions&nbsp;<span aria-hidden="true">→</span>
 			</Link>
 		</div>
 	)

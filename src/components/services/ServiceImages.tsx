@@ -1,8 +1,9 @@
-import stadigoImprovementImage from '@/images/stadigo-stadium-continuous-improvement.png';
 
-import stadigoCompetencyImage from '@/images/stadigo-stadium-competency-assurance.png'
-import stadigoDigitalExcellenceImage from '@/images/stadigo-stadium-digital-excellence.png'
-import stadigoInnovationImage from '@/images/stadigo-stadium-innovation.png'
+
+import stadigoFanImage from '@/images/stadigo-service-fan-enhancement.png'
+import stadigoSafety from '@/images/stadigo-service-safety.png'
+import stadigoDigital from '@/images/stadigo-service-digital-transformation.png'
+import stadigoCompetent from '@/images/stadigo-service-competency-assurance.png'
 
 import ServiceTileImage from "@/components/services/ServiceTileImage";
 
@@ -12,24 +13,24 @@ export default function ServiceImages(){
 
 			<div className="ml-auto w-44 flex-none space-y-4 lg:space-y-24 xl:space-y-32 pt-18 sm:ml-0 lg:pt-72 xl:pt-72">
 				<ServiceTileImage 
-					image={stadigoDigitalExcellenceImage}
-					alt="Stadigo stadium digital excellence"
+					image={stadigoDigital}
+					alt="Stadigo service: Digital Transformation"
 				/>
 
 				<ServiceTileImage 
-					image={stadigoImprovementImage}
-					alt="Stadigo stadium continuous improvement"
+					image={stadigoSafety}
+					alt="Stadigo service: Safety and Efficiency"
 				/>
 			</div>
 
 			<div className="mr-auto w-44 flex-none space-y-4 lg:space-y-24 xl:space-y-32 sm:mr-0 pt-8 lg:pt-36 xl:pt-52">
 				<ServiceTileImage 
-					image={stadigoCompetencyImage}
-					alt="Stadigo stadium competency assurance"
+					image={stadigoCompetent}
+					alt="Stadigo service: Competency Assurance"
 				/>
 				<ServiceTileImage 
-					image={stadigoInnovationImage}
-					alt="stadigo stadium innovation"
+					image={stadigoFanImage}
+					alt="Stadigo service: Fan Experience Enhancement"
 				/>
 			</div>
 
