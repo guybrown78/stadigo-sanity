@@ -178,7 +178,7 @@ export default function ContactForm() {
 				}
 				{
 					isError && (
-						<p className='text-right text-slate-300" text-sm mt-4'><span className='font-semibold'>Oh dear!</span> - Something went wrong when trying to send your message.<br />Please try again shortly.</p>
+						<p className='text-right text-slate-300 text-sm mt-4'><span className='font-semibold'>Oh dear!</span> - Something went wrong when trying to send your message.<br />Please try again shortly.</p>
 					)
 				}
 			</div>
