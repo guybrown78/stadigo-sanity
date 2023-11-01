@@ -23,13 +23,13 @@ export default function ContactForm() {
 		setIsError(false)
 		setIsLoading(true);
 
-		// var base = new Airtable({apiKey: process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN}).base(process.env.NEXT_PUBLIC_AIRTABLE_BASE);
+		// const base = new Airtable({apiKey: process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN}).base(process.env.NEXT_PUBLIC_AIRTABLE_BASE);
 
 		const date = await formDate()
 
 		console.log("date", date)
 
-		const formData = {
+		const fields = {
 			FirstName: event.target.first_name.value,
 			LastName: event.target.last_name.value,
 			Email: event.target.email.value,
@@ -38,23 +38,15 @@ export default function ContactForm() {
 			SentDate: date,
 		}
 
-		console.log("formData", formData)
+		console.log("fields", fields)
 
 		setTimeout(() => {
-			setIsSuccess(true)
+			setIsError(true)
 			setIsLoading(false);
 		},1500)
 		// base('WebsiteContactForm').create([
 		// 	{
-		// 		"fields": {
-		// 				FirstName: event.target.first_name.value,
-		// 				LastName: event.target.last_name.value,
-		// 				Email: event.target.email.value,
-		// 				Phone: event.target.phone.value,
-		// 				Service: event.target.service.value,
-		// 				Message: event.target.message.value,
-		// 				SentDate: date,
-		// 		}
+		// 		fields
 		// 	},
 
 		// ], function(err, records) {
@@ -186,7 +178,7 @@ export default function ContactForm() {
 				}
 				{
 					isError && (
-						<p className='text-right text-slate-300" text-sm mt-4'><span className='font-semibold'>Oh dear!</span> - Something when wrong when trying to send your message.<br />Please try again shortly.</p>
+						<p className='text-right text-slate-300" text-sm mt-4'><span className='font-semibold'>Oh dear!</span> - Something went wrong when trying to send your message.<br />Please try again shortly.</p>
 					)
 				}
 			</div>

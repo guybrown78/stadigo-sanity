@@ -1,10 +1,15 @@
-import { Fragment, useRef, useState, useEffect } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Button } from '@/components/Button'
-import { FaEnvelopeOpenText } from 'react-icons/fa6'
+
+'use client'
+
+import { FaEnvelopeOpenText, FaSpinner, FaCheck } from 'react-icons/fa6'
+import { useEffect, useRef, useState} from 'react'
+import clsx from 'clsx'
+import { Dialog } from '@headlessui/react'
 import Link from 'next/link'
-import { TextField } from '../Fields'
-import { ModalWrapper } from './ModalWrapper'
+import { Button } from '@/components/Button'
+import { TextField } from '@/components/Fields'
+import { ModalWrapper } from '@/components/modals/ModalWrapper'
+import { formDate } from '@/libs/formDate';
 
 type Props = {
 	openModal:boolean,
@@ -16,15 +21,64 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 
   const cancelButtonRef = useRef(null)
 
+	const [isLoading, setIsLoading] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isError, setIsError] = useState(false);
+
 	// Handles the submit event on form submit.
   const handleSubmit = async (event:any) => {
 		// Stop the form from submitting and refreshing the page.
     event.preventDefault()
 
-		// console.log("handleSubmit")
+		setIsSuccess(false)
+		setIsError(false)
+		setIsLoading(true);
+		
+
+		const date = await formDate()
+
+		console.log("date", date)
+
+		const fields = {
+			FirstName: event.target.first_name.value,
+			Email: event.target.email.value,
+			SentDate: date,
+		}
+
+		console.log("fields", fields)
+
+		setTimeout(() => {
+			// 
+			setIsError(true)
+			setIsLoading(false);
+			// 
+		},1500)
+
 	}
+
+	useEffect(() => {
+		if(openModal){
+			console.log("open modal")
+			setIsSuccess(false);
+			setIsError(false);
+			setIsLoading(false);
+		}
+	}, [openModal])
+
+	useEffect(() => {
+		if(isSuccess){
+			// on Success
+			setTimeout(() => {
+				onCloseModal();
+			},750)
+		}
+	}, [isSuccess])
+
+
 	return(
-		<ModalWrapper openModal={openModal} onCloseModal={onCloseModal} initialFocusRef={cancelButtonRef}>
+		<ModalWrapper openModal={openModal} onCloseModal={() => {
+			!isLoading ? onCloseModal() : null
+		}} initialFocusRef={cancelButtonRef}>
 			<form
 				onSubmit={(e) => handleSubmit(e)}
 			>
@@ -47,9 +101,9 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 							<TextField
 								className="col-span-full"
 								label="Your first name"
-								id="firstName"
-								name="firstName"
-								type="firstName"
+								id="first_name"
+								name="first_name"
+								type="text"
 								autoComplete="given-name"
 								required
 							/>	
@@ -83,8 +137,29 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 						width='full'
 						rounded='normal'
 						className="sm:col-start-2"
+						disabled={isLoading || isSuccess}
 					>
-						Subscribe
+						{
+								!isLoading && !isSuccess &&(
+									<span className='flex items-center'>
+										Subscribe
+									</span>
+								)
+							}
+							{
+								isLoading && !isSuccess && (
+									<span className='flex items-center'>
+										Subscribing<span aria-hidden="true" className="ml-2"><FaSpinner className="w-5 h-5 animate-spin"/></span>
+									</span>
+								)
+							}
+							{
+								!isLoading && isSuccess && (
+									<span className='flex items-center'>
+										Subscribed<span aria-hidden="true" className="ml-2"><FaCheck className="w-5 h-5"/></span>
+									</span>
+								)
+							}
 					</Button>
 
 					<Button
@@ -94,11 +169,17 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 						rounded='normal'
 						color='slate'
 						onClick={onCloseModal}
+						disabled={isLoading}
 						className='mt-3 sm:col-start-1 sm:mt-0'
 						innerRef={cancelButtonRef}
 					>
 						Cancel
 					</Button>
+
+					<div className={clsx(isError ? 'block' : 'hidden',"col-span-2 mt-4")}>
+						<p className='text-center text-slate-700 text-sm '><span className='font-semibold text-red-700'>Oh dear!</span> - Something went wrong when trying to subscribe.<br />Please try again shortly.</p>
+					</div>
+
 				</div>
 			</form>
 		</ModalWrapper>
