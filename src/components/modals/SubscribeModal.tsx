@@ -58,7 +58,6 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 
 	useEffect(() => {
 		if(openModal){
-			console.log("open modal")
 			setIsSuccess(false);
 			setIsError(false);
 			setIsLoading(false);
