@@ -5,6 +5,7 @@ import { FaEnvelopeOpenText, FaSpinner, FaCheck } from 'react-icons/fa6'
 import { useEffect, useRef, useState} from 'react'
 import clsx from 'clsx'
 import { Dialog } from '@headlessui/react'
+import Airtable from "airtable";
 import Link from 'next/link'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
@@ -37,7 +38,6 @@ export function PioneerModal({ openModal = false, onCloseModal}:Props){
 
 		const date = await formDate()
 
-		console.log("date", date)
 
 		const fields = {
 			FirstName: event.target.first_name.value,
@@ -49,12 +49,24 @@ export function PioneerModal({ openModal = false, onCloseModal}:Props){
 			SentDate: date,
 		}
 
-		console.log("fields", fields)
+		const airtableToken:string = process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN as string;
+		const airtableBase:string = process.env.NEXT_PUBLIC_AIRTABLE_BASE as string;
+		const base = new Airtable({apiKey: airtableToken}).base(airtableBase);
 
-		setTimeout(() => {
-			setIsError(true)
-			setIsLoading(false);
-		},1500)
+
+		base('pioneers').create([{
+			fields
+		}], (err:any, records:any) => {
+			if (err) {
+				setIsError(true)
+				setIsLoading(false);
+				return;
+			}
+			records.forEach(() => {
+				setIsSuccess(true);
+				setIsLoading(false);
+			});
+		});
 
 	}
 

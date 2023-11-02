@@ -35,10 +35,7 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 		setIsError(false)
 		setIsLoading(true);
 		
-
 		const date = await formDate()
-
-		console.log("date", date)
 
 		const fields = {
 			FirstName: event.target.first_name.value,
@@ -47,24 +44,19 @@ export function SubscribeModal({ openModal = false, onCloseModal}:Props){
 			Subscribed:true,
 		}
 
-		console.log("fields", fields)
-
 		const airtableToken:string = process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN as string;
 		const airtableBase:string = process.env.NEXT_PUBLIC_AIRTABLE_BASE as string;
 		const base = new Airtable({apiKey: airtableToken}).base(airtableBase);
 
-		
 		base('subscriptions').create([{
 			fields
-		}], function(err:any, records:any) {
+		}], (err:any, records:any) => {
 			if (err) {
-				console.error(err);
 				setIsError(true)
-				// setIsLoading(false);
-
+				setIsLoading(false);
 				return;
 			}
-			records.forEach(function (record:any) {
+			records.forEach(() => {
 				setIsSuccess(true);
 				setIsLoading(false);
 			});

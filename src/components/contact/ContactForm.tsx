@@ -2,10 +2,12 @@
 'use client'
 
 import { FaSpinner, FaCheck } from 'react-icons/fa6'
+import { useState } from "react";
+import Airtable from "airtable";
 import { Button } from '@/components/Button'
 import { TextAreaField, TextField } from '@/components/Fields'
 import { formDate } from '@/libs/formDate';
-import { useState } from "react";
+
 
 
 export default function ContactForm() {
@@ -23,11 +25,7 @@ export default function ContactForm() {
 		setIsError(false)
 		setIsLoading(true);
 
-		// const base = new Airtable({apiKey: process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN}).base(process.env.NEXT_PUBLIC_AIRTABLE_BASE);
-
 		const date = await formDate()
-
-		console.log("date", date)
 
 		const fields = {
 			FirstName: event.target.first_name.value,
@@ -38,31 +36,23 @@ export default function ContactForm() {
 			SentDate: date,
 		}
 
-		console.log("fields", fields)
+		const airtableToken:string = process.env.NEXT_PUBLIC_AIRTABLE_PERSONAL_ACCESS_TOKEN as string;
+		const airtableBase:string = process.env.NEXT_PUBLIC_AIRTABLE_BASE as string;
+		const base = new Airtable({apiKey: airtableToken}).base(airtableBase);
 
-		setTimeout(() => {
-			setIsError(true)
-			setIsLoading(false);
-		},1500)
-		// base('WebsiteContactForm').create([
-		// 	{
-		// 		fields
-		// 	},
-
-		// ], function(err, records) {
-		// 	if (err) {
-		// 		console.error(err);
-		// 		setIsError(true)
-		// 		// setIsLoading(false);
-
-		// 		return;
-		// 	}
-		// 	records.forEach(function (record) {
-		// 		console.log(record.getId());
-		// 		setIsSuccess(true);
-		// 		setIsLoading(false);
-		// 	});
-		// });
+		base('messages').create([{
+			fields
+		}], (err:any, records:any) => {
+			if (err) {
+				setIsError(true)
+				setIsLoading(false);
+				return;
+			}
+			records.forEach(() => {
+				setIsSuccess(true);
+				setIsLoading(false);
+			});
+		});
 		
   }
 
