@@ -37,7 +37,6 @@ export default function CookieBanner(){
 					<p className="text-base leading-6 text-slate-900">
 						We use cookies to enhance your browsing experience and analyse our traffic. By clicking <span className='font-semibold'>Accept All</span>, you consent to our use of cookies. See our{' '}
 						<Link href="/policies/cookie-policy" className="font-semibold text-green-600">cookie policy</Link> for more information on cookies.
-						.
 					</p>
 					<div className="mt-4 flex items-center gap-x-5">
 						<Button color='green' onClick={() => setCookieConsent(true)}>Accept all</Button>
