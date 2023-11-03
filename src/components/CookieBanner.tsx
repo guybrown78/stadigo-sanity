@@ -39,8 +39,8 @@ export default function CookieBanner(){
 						<Link href="/policies/cookie-policy" className="font-semibold text-green-600">cookie policy</Link> for more information on cookies.
 					</p>
 					<div className="mt-4 flex items-center gap-x-5">
-						<Button color='green' onClick={() => setCookieConsent(true)}>Accept all</Button>
-						<Button variant='outline' color='slate' onClick={() => setCookieConsent(false)}>Reject all</Button>
+						<Button color='green' onClick={() => setCookieConsent(true)}>Accept All</Button>
+						<Button variant='outline' color='slate' onClick={() => setCookieConsent(false)}>Reject All</Button>
 					</div>
 				</div>
 			</div>	

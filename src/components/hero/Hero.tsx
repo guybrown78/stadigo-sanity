@@ -40,7 +40,7 @@ export default function Hero(){
           </div> */}
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-							<span className="block text-lg sm:text-xl text-green-600 tracking-normal">Empowering Exellence in</span>
+							<span className="block text-lg sm:text-xl text-green-600 tracking-normal">Empowering Excellence in</span>
 							Stadium Performance
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-600">
