@@ -2,7 +2,9 @@ import { Container } from "@/components/Container";
 import { PortableText } from "@portabletext/react";
 
 import { getCategories } from "@/sanity/sanity-utils";
-
+import clsx from "clsx";
+import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa6'
 
 
 
@@ -21,16 +23,28 @@ export default async function Categories() {
 				</p>
 			</div>
 
-			<div className="mx-auto mt-16 grid grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-			{/* <ul className=""> */}
-				{categories.map((category) => 
-					<div key={category._id} className="flex flex-col items-start justify-start shadow-md rounded-md p-4">
-						<h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900">
-							{category.title}
-						</h3>
+			<div className="mx-auto my-16 grid grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+				{categories.map((category, index) => 
+					<div 
+						key={category._id} 
+						className="flex flex-col items-start justify-between shadow-md rounded-md p-4"
+					>
+						<div className="mt-3 flex w-full justify-between items-center">
+							<h3 className="text-lg font-semibold leading-6 text-slate-900">
+								{category.title}
+							</h3>
+							<div className={clsx('text-xs  px-2 py-1  rounded-full', category.insights?.length ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500')}>{category.insights?.length} <span>{`article${category.insights?.length === 1 ? '' : 's'}`}</span></div>
+						</div>
 						<div className="mt-5 prose prose-slate prose-sm">
 							<PortableText value={category.description} />
 						</div>
+
+						<div className="mt-3 flex w-full justify-end items-end">
+							<Link href={`/insights/categories/${category.slug}`} replace>
+									<p className="mt-2 group relative text-sm text-right leading-6 text-green-600 flex items-center justify-end">See full category <span className="inline-flex ml-2 mr-1 group-hover:mr-0 group-hover:ml-3 transition-all"><FaArrowRight /></span></p>
+							</Link>
+						</div>
+
 					</div>
 				)}
 

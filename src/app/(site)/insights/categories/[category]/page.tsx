@@ -35,7 +35,7 @@ export default async function Category({ params }:Props){
 
 			{ !category.insights?.length && 
 				<div className="mt-8">
-					<p className="text-lg tracking-tight text-slate-600 my-8">There are current no Insights posted in { category.title }.</p>
+					<p className="text-lg tracking-tight text-slate-600 my-8">There are currently no insights posted in { category.title }.</p>
 				</div>
 				
 			}
