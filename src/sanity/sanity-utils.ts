@@ -185,6 +185,7 @@ export async function getCategories():Promise<Category[]> {
       _id,
       _createdAt,
       title,
+			description,
       "slug": slug.current,
 			"insights": *[_type == 'insightArticle' && references(^._id)] {
 				_id,
