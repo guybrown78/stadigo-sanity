@@ -19,7 +19,6 @@ export default async function Project({ params }:Props){
 	const slug = params.insight;
 	const insight = await getInsight(slug)
 
-	console.log(insight)
 	return (
 		<Container>
 

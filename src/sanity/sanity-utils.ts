@@ -179,6 +179,22 @@ export async function getInsight(slug:string):Promise<Insight> {
 	)
 }
 
+export async function getCategories():Promise<Category[]> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == "category"]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+			"insights": *[_type == 'insightArticle' && references(^._id)] {
+				_id,
+				title,
+				"slug": slug.current,
+				publishedAt,
+			}
+    }`
+	)
+}
 
 export async function getCategory(slug:string):Promise<Category> {
 	return createClient(clientConfig).fetch(
