@@ -6,7 +6,11 @@ import clsx from "clsx";
 import Link from "next/link";
 import { FaArrowRight } from 'react-icons/fa6'
 
-
+export const metadata = {
+  title: "Explore Stadigo's Stadium Excellence Categories | Stadium Safety & Competency Assurance",
+  description: "Discover a wealth of insights and innovations in stadium safety and competency assurance. Explore Stadigo's organized categories covering digital transformation, fan experience, staff empowerment, and more.",
+	keywords: "Stadium Safety, Competency Assurance, Digital Transformation, Fan Experience, Staff Empowerment, Stadium Operations, Performance Analytics, Stadium Potential, Digital Engagement, Stadigo Categories"
+}
 
 export default async function Categories() {
 

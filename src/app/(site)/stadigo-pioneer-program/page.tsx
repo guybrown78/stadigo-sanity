@@ -1,7 +1,6 @@
 
 import {
 	FaSitemap,
-	FaHandHoldingMedical,
 	FaHandsHoldingCircle,
 	FaUserLock,
 	FaUsersLine,
@@ -13,6 +12,15 @@ import Image from 'next/image'
 import { PioneerRegister } from "@/components/modals/PioneerRegister";
 import CheckedBackground from "@/components/CheckedBackground";
 import BluredBackground from "@/components/BluredBackground";
+
+
+export const metadata = {
+  title: "Stadigo Pioneer Program – Shape the Future of Stadium Excellence",
+  description: "Join the Stadigo Pioneer Program and be a part of the stadium industry transformation. Your insights matter – contribute at your convenience and make excellence the norm.",
+	keywords: "Stadigo Pioneer Program, stadium excellence, industry transformation, valuable insights, convenience, contribute, excellence, fan experience"
+}
+
+
 
 export default function StadogpPioneerProgram(){
 	return(

@@ -173,7 +173,9 @@ export async function getInsight(slug:string):Promise<Insight> {
 				description
 			},
 			"estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-			body
+			body,
+			metaDescription,
+			keywords,
     }`, 
 		{ slug }
 	)

@@ -14,6 +14,18 @@ import MoreInsights from "@/components/insights/MoreInsights";
 type Props = {
 	params: { insight:string }
 }
+
+export const generateMetadata = async ({ params }:Props) => {
+	const slug = params.insight;
+	const insight = await getInsight(slug)
+  return {
+    title: `Stadigo Insight: ${insight.title}`,
+		description: insight.metaDescription,
+		keywords: insight.keywords
+  };
+};
+
+
 export default async function Project({ params }:Props){
 
 	const slug = params.insight;

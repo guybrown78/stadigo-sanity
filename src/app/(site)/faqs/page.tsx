@@ -2,6 +2,14 @@ import { Container } from "@/components/Container";
 import { getFaqs } from "@/sanity/sanity-utils";
 
 
+
+export const metadata = {
+  title: "Stadigo's Frequently Asked Questions - Stadigo Stadium Excellence and Competency Assurance",
+  description: "Find answers to your questions about Stadigo, stadium competence assurance, fan safety, and more. Explore our FAQ section for in-depth information.",
+	keywords: "Frequently Asked Questions, FAQ, Stadigo, Stadium excellence, Competency assurance, Fan safety, Stadium management, Digital solutions, Empower staff, Sports stadium performance, Fan experience, Safety assurance, Stadium operations, Excellence in sports arenas, Stadium software, Digital transformation, Fan engagement, Targeted training, Sports venue competence, Innovative stadium solutions, Staff training, Stadium innovation, Stadium technology"
+}
+
+
 export default async function FaqPage(){
 	const faqs =  await getFaqs();
 

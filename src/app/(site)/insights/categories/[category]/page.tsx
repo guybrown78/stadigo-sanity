@@ -3,10 +3,23 @@ import { Container } from "@/components/Container";
 import InsightCard from "@/components/insights/InsightCard";
 import { getCategory } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
+
 
 type Props = {
 	params: { category:string }
 }
+
+export const generateMetadata = async ({ params }:Props) => {
+	const slug = params.category;
+	const category = await getCategory(slug);
+  return {
+    title: `Stadigo Insight Category: ${category.title}`,
+		description: category.metaDescription,
+		keywords: category.keywords
+  };
+};
+
 export default async function Category({ params }:Props){
 
 	const slug = params.category;

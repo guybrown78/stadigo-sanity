@@ -4,6 +4,13 @@ import InsightCard from "@/components/insights/InsightCard";
 import { getInsights } from "@/sanity/sanity-utils";
 
 
+export const metadata = {
+  title: "Stadigo Insights | Stadium Safety, Competency Assurance, and Fan Experience",
+  description: "Explore a wealth of insights at Stadigo, covering stadium safety, competency assurance, and fan experience. Gain valuable knowledge to revolutionise sports venues.",
+	keywords: "Stadigo Insights, Stadium Safety, Competency Assurance, Fan Experience, Stadium Management, Digital Innovation, Safety Measures, Fan Engagement, Stadium Excellence"
+}
+
+
 export default async function Insights() {
 
 	const insights = await getInsights();
