@@ -44,14 +44,14 @@ export default function InsightBreadcrumbs({  }:Props){
 						return (
 							<React.Fragment key={page.id}>
 								<li className="flex">
-									<div className="flex items-center overflow-hidden">
-										<FaChevronRight className="	h-2 w-2 flex-shrink-0 text-slate-400" aria-hidden="true" />
+									<div className="flex items-center">
+										<FaChevronRight className="h-2 w-2 flex-shrink-0 text-slate-400" aria-hidden="true" />
 										<Link
 											href={page.href}
-											className={clsx('flex-auto ml-1 sm:ml-4 text-xs hover:text-slate-700 truncate', page.itemClasses)}
+											className={clsx('flex-auto overflow-hidden ml-1 sm:ml-4 text-xs hover:text-slate-700', page.itemClasses)}
 											aria-current={page.current ? 'page' : undefined}
 										>
-											{page.name}
+											<span className="inline max-w-full overflow-hidden text-ellipsis">{page.name}</span>
 										</Link>
 									</div>
 								</li>
