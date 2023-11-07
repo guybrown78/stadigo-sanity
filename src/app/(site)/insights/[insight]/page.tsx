@@ -9,6 +9,7 @@ import InsightTag from "@/components/insights/InsightTag";
 import { getInsight } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import MoreInsights from "@/components/insights/MoreInsights";
+import InsightBreadcrumbs from '@/components/insights/InsightBreadcrumbs'
 
 
 type Props = {
@@ -33,7 +34,7 @@ export default async function Project({ params }:Props){
 
 	return (
 		<Container>
-
+			<InsightBreadcrumbs />
 			<Image 
 				src={insight.coverImage}
 				alt={insight.title}

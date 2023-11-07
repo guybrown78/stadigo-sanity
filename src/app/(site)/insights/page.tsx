@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 import InsightCard from "@/components/insights/InsightCard";
 
 import { getInsights } from "@/sanity/sanity-utils";
-
+import InsightBreadcrumbs from '@/components/insights/InsightBreadcrumbs'
 
 export const metadata = {
   title: "Stadigo Insights | Stadium Safety, Competency Assurance, and Fan Experience",
@@ -17,6 +17,7 @@ export default async function Insights() {
 
 	return (
 		<Container>
+			<InsightBreadcrumbs />
 			<div className="max-w-2xl">
 				<h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Stadigo Insights</h1>
 				<p className="mt-2 text-lg leading-8 text-slate-600">

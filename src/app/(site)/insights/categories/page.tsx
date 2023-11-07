@@ -1,10 +1,12 @@
 import { Container } from "@/components/Container";
 import { PortableText } from "@portabletext/react";
+import InsightBreadcrumbs from '@/components/insights/InsightBreadcrumbs'
 
 import { getCategories } from "@/sanity/sanity-utils";
 import clsx from "clsx";
 import Link from "next/link";
 import { FaArrowRight } from 'react-icons/fa6'
+
 
 export const metadata = {
   title: "Explore Stadigo's Stadium Excellence Categories | Stadium Safety & Competency Assurance",
@@ -18,6 +20,7 @@ export default async function Categories() {
 
 	return (
 		<Container>
+			<InsightBreadcrumbs />
 			<div className="max-w-4xl">
 				<h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Stadigo Insight Categories</h1>
 				<p className="mt-4 text-base leading-8 text-slate-600">

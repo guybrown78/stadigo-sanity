@@ -7,12 +7,13 @@ import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieBanner from '@/components/CookieBanner'
+import SiteLayout from '@/components/layout/SiteLayout'
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
+// const inter = Inter({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-inter',
+// })
 
 export const metadata: Metadata = {
   title: "Stadigo - Revolutionising Stadium Excellence and Competency Assurance",
@@ -26,22 +27,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html 
-			lang="en" 
-			className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
-        inter.variable,
-      )}
-		>
-			<GoogleAnalytics GA_MEASUREMENT_ID='G-Q1JDSZ3HFZ'/>
-      <body className="flex h-full flex-col">
-				<Header />
-				<main>
-					{children}
-				</main>
-				<Footer />
-				<CookieBanner />
-			</body>
-    </html>
+		<SiteLayout>
+			{children}
+		</SiteLayout>
+    // <html 
+		// 	lang="en" 
+		// 	className={clsx(
+    //     'h-full scroll-smooth bg-white antialiased',
+    //     inter.variable,
+    //   )}
+		// >
+		// 	<GoogleAnalytics GA_MEASUREMENT_ID='G-Q1JDSZ3HFZ'/>
+    //   <body className="flex h-full flex-col">
+		// 		<Header />
+		// 		<main>
+		// 			{children}
+		// 		</main>
+		// 		<Footer />
+		// 		<CookieBanner />
+		// 	</body>
+    // </html>
   )
 }

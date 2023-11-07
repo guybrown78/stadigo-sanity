@@ -1,6 +1,7 @@
 // import { getProject } from "@/sanity/sanity-utils";
 import { Container } from "@/components/Container";
 import InsightCard from "@/components/insights/InsightCard";
+import InsightBreadcrumbs from '@/components/insights/InsightBreadcrumbs'
 import { getCategory } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
@@ -28,6 +29,7 @@ export default async function Category({ params }:Props){
 
 	return (
 		<Container>
+			<InsightBreadcrumbs />
 			<h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{category.title}</h1>
 			<div className="mt-5 prose prose-slate lg:prose-lg">
 				<PortableText value={category.description} />
