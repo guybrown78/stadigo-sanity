@@ -1,8 +1,15 @@
+
+# Stadigo
+
+
+Live site: [stadigo.com](https://stadigo.com/).
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 It connects to a sanity.io headles cms so you will need a sanity project id 'PROJECT_ID' set up in the env, along with a API_VERSION and DATASET token
 
-The forms submit to Airtable. You'll need an ACCESS_TOKEN and AIRTABLE_BASE to reproduce
+The forms submit to Airtable. You'll need an ACCESS_TOKEN and AIRTABLE_BASE to post the form, or just comment out the airtable promise to recreate the flow
 
 styling is Tailwindcss
 
